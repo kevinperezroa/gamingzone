@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Questrial&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./producto/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Tienda Gamer">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./producto.html">Productos</a></li>
+                <li><a href="./nosotros.html">Acerca De</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carrusel de categorías -->
+    <section class="categories-section">
+        <h2>Categorías</h2>
+        <div class="categories-carousel-wrapper">
+            <button class="categories-control prev" id="categories-prev-btn">❮</button>
+            <div class="categories-slider">
+                <div class="categories-track">
+                    <div class="categories-item" data-category="teclados">
+                        <img src="images/inicio/teclado_categoria.webp" alt="Teclados">
+                        <p>Teclados</p>
+                    </div>
+                    <div class="categories-item" data-category="mouse">
+                        <img src="images/inicio/mouse_categoria.jpeg" alt="Mouse">
+                        <p>Mouse</p>
+                    </div>
+                    <div class="categories-item" data-category="auriculares">
+                        <img src="images/inicio/headset_categoria.jpg" alt="Auriculares">
+                        <p>Auriculares</p>
+                    </div>
+                    <div class="categories-item" data-category="monitores">
+                        <img src="images/inicio/monitores_categoria.webp" alt="Monitores">
+                        <p>Monitores</p>
+                    </div>
+                    <div class="categories-item" data-category="sillas">
+                        <img src="images/inicio/silla_categoria.webp" alt="Sillas">
+                        <p>Sillas</p>
+                    </div>
+                    <div class="categories-item" data-category="motherboard">
+                        <img src="images/inicio/board_categoria.webp" alt="Motherboard">
+                        <p>Motherboard</p>
+                    </div>
+                    <div class="categories-item" data-category="discoduro">
+                        <img src="images/inicio/discoduro_categoria.webp" alt="Discos Duros">
+                        <p>Discos Duros</p>
+                    </div>
+                    <div class="categories-item" data-category="fuente">
+                        <img src="images/inicio/fuente_categoria.png" alt="Fuentes de Poder">
+                        <p>Fuentes de Poder</p>
+                    </div>
+                    <div class="categories-item" data-category="memorias">
+                        <img src="images/inicio/memoria_categoria.webp" alt="Memorias">
+                        <p>Memorias</p>
+                    </div>
+                    <div class="categories-item" data-category="tarjetas">
+                        <img src="images/inicio/tarjeta_categoria.webp" alt="Tarjetas Graficas">
+                        <p>Tarjetas Graficas</p>
+                    </div>
+                    <div class="categories-item" data-category="all">
+                        <img src="images/inicio/todo_categoria.png" alt="Todos">
+                        <p>Todos</p>
+                    </div>
+                </div>
+            </div>
+            <button class="categories-control next" id="categories-next-btn">❯</button>
+        </div>
+    </section>
+
+    <!-- Botón flotante del carrito -->
+    <div id="cart-button" class="cart-button">
+        🛒 Carrito (<span id="cart-count">0</span>)
+    </div>
+
+    <!-- Modal del carrito -->
+<!-- Modal del carrito -->
+<div id="cart-modal" class="cart-modal">
+    <div class="cart-content">
+        <h2>Tu Carrito</h2>
+        <ul id="cart-items">
+            <!-- Productos añadidos al carrito aparecerán aquí -->
+        </ul>
+        <button id="open-payment-modal" class="open-payment-button">Realizar Pago</button>
+        <button id="close-cart" class="close-cart">Cerrar</button>
+    </div>
+</div>
+
+<!-- Modal de la plataforma de pago -->
+<div id="payment-modal" class="modal">
+    <h2>Confirmar Pago</h2>
+    <form id="payment-form">
+        <input type="text" placeholder="Nombre completo" required />
+        <input type="email" placeholder="Correo electrónico" required />
+        <input type="number" placeholder="Número de tarjeta" required />
+        <input type="text" placeholder="Dirección" required />
+        <div class="modal-buttons">
+            <button type="submit">Confirmar Pago</button>
+            <button type="button" id="close-payment-modal">Cancelar</button>
+        </div>
+    </form>
+</div>
+<div class="modal-backdrop" id="modal-backdrop"></div>
+
+
+    <!-- Productos -->
+    <section id="productos" class="productos">
+        <div class="producto-grid">
+            <!-- Producto 1 -->
+            <div class="producto" data-category="monitores">
+                <img src="images/productos/monitor1.png" alt="Producto 1">
+                <h3>Monitor gamer Acer Nitro 24” KG240Y</h3>
+                <p>$ 739.990</p>
+                <button>Comprar</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="producto" data-category="monitores">
+                <img src="images/productos/monitor2.webp" alt="Producto 2">
+                <h3>Monitor gamer Acer Curvo 27” ED270</h3>
+                <p>$ 1.159.990</p>
+                <button>Comprar</button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="producto" data-category="monitores">
+                <img src="images/productos/monitor3.png" alt="Producto 3">
+                <h3>Monitor 22MN430 IPS AMD FREESYNC | LG</h3>
+                <p>$ 499.990</p>
+                <button>Comprar</button>
+            </div>
+            <!-- Producto 4 -->
+            <div class="producto" data-category="mouse">
+                <img src="images/productos/mouse1.webp" alt="Producto 4">
+                <h3>Mouse Centrophorus M601 RGB | Redragon</h3>
+                <p>$ 109.990</p>
+                <button>Comprar</button>
+            </div>
+            <!-- Agregar más productos aquí según sea necesario -->
+            <div class="producto" data-category="mouse">
+                <img src="images/productos/mouse2.png" alt="Producto 1">
+                <h3>Mouse inalámbrico recargable OZAA | Trust</h3>
+                <p>$ 154.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="mouse">
+                <img src="images/productos/mouse3.jpg" alt="Producto 1">
+                <h3>Mouse inalámbrico Logitech G PRO X SUPERLIGHT</h3>
+                <p>$ 649.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="teclados">
+                <img src="images/productos/teclado1.jpg" alt="Producto 1">
+                <h3>Teclado Mecánico Gamer GXT 866 | Trust</h3>
+                <p>$ 289.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="teclados">
+                <img src="images/productos/teclado2.png" alt="Producto 1">
+                <h3>Teclado Gamer Logitech Pro X 60 Inalámbrico Lightspeed</h3>
+                <p>$ 1.019.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="teclados">
+                <img src="images/productos/teclado3.jpg" alt="Producto 1">
+                <h3>Teclado Fizz Pro K616 RGB | Redragon</h3>
+                <p>$ 283.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="auriculares">
+                <img src="images/productos/headset1.jpg" alt="Producto 1">
+                <h3>Diadema Hylas H260 RGB | Redragon</h3>
+                <p>$ 577.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="auriculares">
+                <img src="images/productos/headset2.png" alt="Producto 1">
+                <h3>Audífonos inalámbricos Logitech G Astro A50 X</h3>
+                <p>$ 1.699.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="auriculares">
+                <img src="images/productos/headset3.jpg" alt="Producto 1">
+                <h3>Diadema Gamer Inalámbrica Logitech G535 Lightspeed</h3>
+                <p>$ 539.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="sillas">
+                <img src="images/productos/silla1.avif" alt="Producto 1">
+                <h3>Silla Gamer De Escritorio U Oficina Reclinable Giratoria PVC GC-2223</h3>
+                <p>$ 599.900</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="sillas">
+                <img src="images/productos/silla2.avif" alt="Producto 1">
+                <h3>SILLA GAMER RECLINABLE ERGONOMICA NEGRA KITSUNE</h3>
+                <p>$ 1.650.990</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="sillas">
+                <img src="images/productos/silla3.avif" alt="Producto 1">
+                <h3>SILLA GAMER EN CUERO PU REPOSAPIES COJIN 150° AKIRA - ROJA.</h3>
+                <p>$ 1.150.000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="motherboard">
+                <img src="images/productos/board1.webp" alt="Producto 1">
+                <h3>Board B650 AORUS ELITE AX ICE</h3>
+                <p>$1,122,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="motherboard">
+                <img src="images/productos/board2.webp" alt="Producto 1">
+                <h3>Board Asus Rog CROSSHAIR X870E HERO</h3>
+                <p>$3,393,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="discoduro">
+                <img src="images/productos/dd1.webp" alt="Producto 1">
+                <h3>SSD M.2 XPG GAMMIX S70 BLADE 2TB 7400 MB/s</h3>
+                <p>$780,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="discoduro">
+                <img src="images/productos/dd2.webp" alt="Producto 1">
+                <h3>Disco Ssd Adata Ultimate Su650 2Tb 2.5</h3>
+                <p>$620,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="fuente">
+                <img src="images/productos/fuente1.webp" alt="Producto 1">
+                <h3>Fuente de Poder Lian Li EDGE 1300w 80 PLUS PLATINO White</h3>
+                <p>$1,145,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="fuente">
+                <img src="images/productos/fuente2.webp" alt="Producto 1">
+                <h3>Fuente Thermaltake 850W 80+ Gold GF A3 Full Modular</h3>
+                <p>$868,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="memorias">
+                <img src="images/productos/memoria1.webp" alt="Producto 1">
+                <h3>Predator Hermes 48GB 2×24 7200MHz RGB DDR5 White</h3>
+                <p>$1,476,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="memorias">
+                <img src="images/productos/memoria2.webp" alt="Producto 1">
+                <h3>Memoria Ram 16gb 3200Mhz Spectrix D41 DDR4 RGB</h3>
+                <p>$224,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="tarjetas">
+                <img src="images/productos/tarjeta1.webp" alt="Producto 1">
+                <h3>Tarjeta de Video Gigabyte GeForce RTX 4090 AERO OC 24G</h3>
+                <p>$9,930,000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto" data-category="tarjetas">
+                <img src="images/productos/tarjeta2.webp" alt="Producto 1">
+                <h3>Tarjeta de Video AMD Radeon RX 6600 EAGLE 8G</h3>
+                <p>$1,188,000</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <div>
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="#">Teclados</a></li>
+                    <li><a href="#">Mouse</a></li>
+                    <li><a href="#">Audífonos</a></li>
+                    <li><a href="#">Tarjetas Gráficas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Acerca</h4>
+                <ul>
+                    <li><a href="#">Empresa</a></li>
+                    <li><a href="#">Terminos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h4>Conéctate con Nosotros</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Twitch</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 Joel Orozco, William Cervantes, Kevin Perez. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./producto/main.js"></script>
+</body>
+
+</html>
